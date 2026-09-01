@@ -1,0 +1,81 @@
+##count.js##
+let count = document.getElementById("count-number");
+console.log("JavaScript connected");
+let countValue = 0;
+
+function incrementCount() {
+    countValue++;
+    count.textContent=countValue;
+    if (countValue > 0) {
+        count.style.color = "green";
+    }
+    else if (countValue === 0) {
+        count.style.color = "black";
+    count.innerText = countValue;
+    }
+}
+
+function decrementCount() {
+    countValue--;
+    count.textContent=countValue;
+    if (countValue < 0) {
+        count.style.color = "red";
+    }
+    else if (countValue === 0) 
+        count.style.color = "black"; 
+    count.innerText = countValue;
+}
+
+function resetCount() {
+    countValue = 0;
+    count.textContent=countValue;
+    count.style.color = "black";
+    count.innerText = countValue;
+}
+
+
+
+##count.css##
+
+#count-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+#buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-color:blue;
+}
+
+
+###count.html###
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>COUNT</title>
+    <link rel="stylesheet" href="count.css">
+</head>
+
+<body>
+
+    <h1 text-align="center">COUNT</h1>
+
+    <div id="count">
+        <h1 id="count-number">0</h1>
+    </div>
+
+    <div id="buttons">
+        <button onclick="incrementCount()">Increment</button>
+        <button onclick="decrementCount()">Decrement</button>
+        <button onclick="resetCount()">Reset</button>
+    </div>
+
+    <script src="count.js"></script>
+
+</body>
+</html>
